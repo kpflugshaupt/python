@@ -32,6 +32,7 @@ if phases == '':
 
 # Set up variables
 
+# avg pace for each zone
 avgPace = [5.37, 4.80, 4.07, 3.80, 3.25]
 
 time      = 0
