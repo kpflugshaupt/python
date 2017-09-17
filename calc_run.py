@@ -12,8 +12,10 @@ phases     = ''
 draft_uuid = ''
 
 if appex.is_running_extension():
+  # 1. running as extension?
   phases = str(appex.get_text())
 else:
+  # 2. started with arguments?
   if len(sys.argv) > 1:
     draft = re.match('draft:(.*)', sys.argv[1])
     if draft:
@@ -22,9 +24,11 @@ else:
     else:
       phases = ' '.join(sys.argv[1:])
   
+# 3. text on clipboard?
 if phases == '':
   phases = clipboard.get()
 
+# 4. default sample text
 if phases == '':
   phases = console.input_alert('Enter phases', '',
     '5 min z1, 35min z2, 15 min z3', hide_cancel_button=True)
