@@ -47,7 +47,6 @@ cnt       = 1
 
 
 # Subroutines
-
 def rd(num: float) -> float:
   return round(num, 1)
 
@@ -57,7 +56,6 @@ def avg_pace(zone: int) -> float:
 
 
 # Split and parse
-
 phaseSep = ' *[,\n] *'
 output = 'INPUT: ' + phases
 
@@ -104,8 +102,8 @@ output += '\nTOTAL: {} min, {} km, {} min/km'.format(rd(totalTime), rd(totalDist
 
 
 # Show output, finish
-
 console.alert('RUN', output, 'OK', hide_cancel_button=True)
 
+# Return to "drafts", if that's where we came from
 if draft_uuid != '':
   webbrowser.open('drafts4://x-callback-url/open?uuid='+draft_uuid)
